@@ -2,7 +2,7 @@ from setuptools import find_packages,setup
 from typing import List
 
 REQUIREMENTS_FILE_NAME = "requirements.txt"
-HYPHEN_E_DOT = "-e."
+HYPHEN_E_DOT = "-e ."
 def get_requirements()->List[str]:
     with open(REQUIREMENTS_FILE_NAME) as requirement_file:
         requirement_list = requirement_file.readlines()
@@ -16,8 +16,8 @@ def get_requirements()->List[str]:
 setup(
     name = "sensor",
     version="0.0.1",
-    author="ineuron",
+    author="Purnank",
     author_email = "purnankbhatt4191@gmail.com",
     packages = find_packages(),
-    install_requires = get_requirements()
+    install_requires = get_requirements(),
 )
