@@ -2,7 +2,7 @@ import pymongo
 import pandas as pd
 import json
 
-from sensor.config import mongo_client
+#from sensor.config import mongo_client
 
 DATA_FILE_PATH="/config/workspace/aps_failure_training_set1.csv"
 DATABASE_NAME="aps"
@@ -19,3 +19,8 @@ if __name__=="__main__":
     print(json_record[0])
     #insert converted json record to mongo db
     mongo_client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
+
+
+url = 'https://raw.githubusercontent.com/SAI-SRINIVASA-SUBRAMANYAM/aps-sensor-fault-detection-subbu/main/aps_failure_training_set1.csv'
+    df = pd.read_csv(url, index_col=0)
+    print(df)
